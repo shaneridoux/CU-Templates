@@ -1,0 +1,84 @@
+---
+title: "TITLE"
+author: "Shane Ridoux"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    css: styles.css
+    js: event.js
+    toc: true
+    pandoc_args: ["--lua-filter", "tabset.lua"]
+    toc_float: 
+      collapse: false
+      smoothscroll: false
+    df_print: kable
+    code_folding: hide
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding) }) #, output_dir = "../reports") })
+---
+<!-- Markdown actually starts on line 48 -->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+## Sets the maximum height of output boxes and makes them scrollable if necessary
+options(width = 60)
+local({
+  hook_output <- knitr::knit_hooks$get('output')
+  knitr::knit_hooks$set(output = function(x, options) {
+    if (!is.null(options$max.height)) options$attr.output <- c(
+      options$attr.output,
+      sprintf('style="max-height: %s;"', options$max.height)
+    )
+    hook_output(x, options)
+  })
+})
+```
+
+```{cat, engine.opts=list(file = "tabset.lua")}
+## calls tabset.lua file to make tabs
+```
+
+```{r clear_console, include = FALSE}
+rm(list = ls())
+cat("\014")
+```
+
+<!-- Use this after header if you want tabs -->
+<!-- {.tabset .tabset-fade .tabset-pills} -->
+<!---------------- Start of Markdown ------------------>
+
+# **OVERVIEW**
+## Background
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+
+## Motivation
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+
+# **PREPROCESSING**{.tabset .tabset-fade .tabset-pills}
+## Iris Data
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+```{r}
+data(iris)
+head(iris)
+```
+
+## Mtcars Data
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+# **DATA ANALYSIS**
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+
+# **CONCLUSION**
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+
+# **SESSION INFO**
+```{r}
+sessionInfo()
+```
+
+<!-- Footer -->
+
+![](images/CampusMark_Dual_standard_c_cmyk-1-removebg-preview.png)

@@ -1,0 +1,38 @@
+---
+title: "Class Homework #"
+author: "By: First name Last name"
+date: "Due: DD MONTH, YEAR"
+output: 
+  pdf_document:
+    extra_dependencies: ['amsmath', 'amssymb','verbatim', 'amsthm', 'graphicx', 'exercises', 'enumitem']
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics[width=2.0in]{images/CU_Logo-crop.pdf}\LARGE\\}
+  - \posttitle{\end{center}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{exercise}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+\begin{proof}
+
+\end{proof}
+\end{exercise}
+
+\begin{exercise}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+\begin{proof}[Solution]
+
+\end{proof}
+\end{exercise}
+
+\begin{exercise}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce ac tellus et massa efficitur posuere. Sed vel convallis arcu. Nulla facilisi. Mauris ultricies est eu turpis molestie, nec dictum metus efficitur. Donec nec lacus sed ipsum posuere hendrerit. Duis sit amet metus vitae metus faucibus tempor nec a enim. Donec lobortis convallis nunc, id lacinia ante tempor in. Proin in libero at ipsum facilisis vehicula.
+\begin{proof}[Answer]
+
+\end{proof}
+\end{exercise}

@@ -1,0 +1,11 @@
+Package: Templates
+Type: Package
+Title: Templates
+Version: 0.1.0
+Author: Shane Ridoux
+Maintainer: The package maintainer <shaneridoux@gmail.com>
+Description: This package contains a few templates used frequently for school.
+License: MIT LICENSE
+Encoding: UTF-8
+NeedsCompilation: no
+Packaged: 2024-04-15 21:08:52 UTC; shane
